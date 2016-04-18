@@ -6,6 +6,11 @@ branches:
     only:
         - tests
 
+sudo: required
+
+before_install:
+    - sudo apt-get install -qq libblas-dev liblapack-dev libatlas-base-dev gfortran
+
 install: pip install --no-deps --ignore-installed -r requirements.txt
 
 script: make test
