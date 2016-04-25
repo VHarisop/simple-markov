@@ -10,17 +10,17 @@ class JSON_Reader(object):
 
         {
             "Initial": {
-                "State 1": Probability 1,
-                "State 2": Probability 2,
+                "State 1": "Probability 1",
+                "State 2": "Probability 2",
                 ...
-                "State N": Probability N
+                "State N": "Probability N"
             },
             "Table": {
                 "State 1": {
-                    "State 1": Transition Probability 1,
-                    "State 2": Transition Probability 2,
+                    "State 1": "Transition Probability 1",
+                    "State 2": "Transition Probability 2",
                     ...
-                    "State K": Transition Probability K
+                    "State K": "Transition Probability K"
                 },
                 ...
                 "State N": ...
@@ -71,16 +71,16 @@ class YAML_Reader(object):
     The structure of the YAML file should be as follows:
 
         Initial:
-            State 1: Probability 1
-            State 2: Probability 2
+            State 1: "Probability 1"
+            State 2: "Probability 2"
             ...
-            State N: Probability N
+            State N: "Probability N"
         Table:
             State 1:
-                State 1: Transition Probability 1
-                State 2: Transition Probability 2
+                State 1: "Transition Probability 1"
+                State 2: "Transition Probability 2"
                 ...
-                State K: Transition Probability K
+                State K: "Transition Probability K"
             ...
             State N:
                 ...

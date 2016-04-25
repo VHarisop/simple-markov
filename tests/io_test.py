@@ -1,4 +1,5 @@
 import unittest, os
+from fractions import Fraction
 from simple_markov.io import JSON_Reader, YAML_Reader
 
 class TestReaders(unittest.TestCase):
@@ -20,7 +21,7 @@ class TestReaders(unittest.TestCase):
 
         # make sure transitions sum to 1
         self.assertTrue(
-            all(abs(sum([i[1] for i in table[key]]) - 1) < 0.0001 \
+            all(sum(Fraction(i[1]) for i in table[key]) == 1 \
                 for key in table)
         )
         
@@ -41,6 +42,6 @@ class TestReaders(unittest.TestCase):
 
         # make sure transitions sum to 1
         self.assertTrue(
-            all(abs(sum([i[1] for i in table[key]]) - 1) < 0.0001 \
+            all(sum(Fraction(i[1]) for i in table[key]) == 1 \
                 for key in table)
         )
